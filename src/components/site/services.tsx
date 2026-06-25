@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "./section-heading";
-import { FadeIn, StaggerContainer, StaggerItem } from "./fade-in";
+import { FadeIn, StaggerContainer, HorizontalStaggerItem } from "./fade-in";
 
 const services = [
   {
@@ -51,9 +51,9 @@ export function Services() {
 
       <StaggerContainer className="mt-14 grid gap-6 md:grid-cols-3">
         {services.map((s) => (
-          <StaggerItem key={s.title}>
+          <HorizontalStaggerItem key={s.title} className="h-full">
             <Card
-              className="group relative overflow-hidden border-border bg-card shadow-xl shadow-primary/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 h-full flex flex-col"
+              className="group relative overflow-hidden border-border bg-card pt-0 shadow-xl shadow-primary/5 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 h-full flex flex-col"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -61,35 +61,34 @@ export function Services() {
                   alt={s.alt}
                   width={800}
                   height={420}
-                  className="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="aspect-[16/9] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
               </div>
               <CardHeader>
-                <span className="grid size-11 place-items-center rounded-xl bg-primary/12 text-primary ring-1 ring-primary/25">
+                <span className="grid size-11 place-items-center rounded-xl bg-primary/12 text-primary ring-1 ring-primary/25 shadow-sm transition-transform group-hover:scale-110">
                   <s.icon className="size-5" />
                 </span>
                 <CardTitle className="mt-4 flex items-center justify-between font-display text-xl">
                   {s.title}
-                  <ArrowUpRight className="size-5 text-muted-foreground transition-colors group-hover:text-primary" />
+                  <ArrowUpRight className="size-5 text-muted-foreground transition-all group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </CardTitle>
                 <CardDescription className="mt-2 text-sm leading-relaxed">
                   {s.desc}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
+              <CardContent className="flex flex-wrap gap-2 mt-auto">
                 {s.tags.map((t) => (
                   <Badge
                     key={t}
                     variant="secondary"
-                    className="border border-border bg-secondary/60 font-mono text-[11px] font-normal text-muted-foreground"
+                    className="border border-border bg-secondary/60 font-mono text-[11px] font-normal text-muted-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary"
                   >
                     {t}
                   </Badge>
                 ))}
               </CardContent>
             </Card>
-          </StaggerItem>
+          </HorizontalStaggerItem>
         ))}
       </StaggerContainer>
     </section>

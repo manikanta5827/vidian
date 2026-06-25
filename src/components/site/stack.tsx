@@ -1,5 +1,5 @@
 import { SectionHeading } from "./section-heading";
-import { FadeIn, StaggerContainer, StaggerItem } from "./fade-in";
+import { FadeIn, StaggerContainer, StaggerItem, HorizontalStaggerItem } from "./fade-in";
 
 // color-coded by discipline — proof-of-stack grid
 // on-theme: green for design disciplines, neutral for the rest
@@ -45,7 +45,7 @@ export function Stack() {
         <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_350px]">
           <StaggerContainer className="grid gap-6 sm:grid-cols-2">
             {groups.map((g) => (
-              <StaggerItem
+              <HorizontalStaggerItem
                 key={g.label}
                 className="rounded-2xl border border-border bg-card p-6 shadow-xl shadow-primary/5 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
               >
@@ -65,19 +65,17 @@ export function Stack() {
                     </li>
                   ))}
                 </ul>
-              </StaggerItem>
+              </HorizontalStaggerItem>
             ))}
           </StaggerContainer>
 
-          <FadeIn delay={0.2} className="relative hidden lg:block">
-            <div className="mt-8 lg:mt-0">
-             <div className="overflow-hidden rounded-2xl border border-border shadow-2xl shadow-primary/10 h-full min-h-[300px]">
+          <FadeIn delay={0.2} className="relative hidden lg:block h-full">
+            <div className="relative overflow-hidden rounded-3xl border border-border shadow-2xl shadow-primary/10 h-full min-h-[300px]">
               <img
                 src="/img/processor_board.jpg"
                 alt="Close-up of a processor on a motherboard"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-            </div>
             </div>
           </FadeIn>
         </div>

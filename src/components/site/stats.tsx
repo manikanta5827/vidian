@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { FadeIn, StaggerContainer, StaggerItem } from "./fade-in";
+import { FadeIn, StaggerContainer, StaggerItem, HorizontalStaggerItem } from "./fade-in";
 
 const stats = [
   { value: 60, suffix: "+", label: "VLSI engineers" },
@@ -52,10 +52,10 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
     <section className="border-y border-border/60 bg-card/40">
       <StaggerContainer className="mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-10 px-5 py-12 lg:grid-cols-4 lg:px-8">
         {stats.map((s) => (
-          <StaggerItem key={s.label} className="text-center rounded-2xl bg-card border border-border p-6 shadow-xl shadow-primary/5 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all">
+          <HorizontalStaggerItem key={s.label} className="text-center rounded-2xl bg-card border border-border p-6 shadow-xl shadow-primary/5 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all">
             <Counter value={s.value} suffix={s.suffix} />
             <div className="mt-2 text-sm text-muted-foreground">{s.label}</div>
-          </StaggerItem>
+          </HorizontalStaggerItem>
         ))}
       </StaggerContainer>
     </section>

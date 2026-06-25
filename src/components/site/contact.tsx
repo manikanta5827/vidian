@@ -46,19 +46,19 @@ export function Contact() {
 
           <div className="mt-8 space-y-4 text-sm">
             <a
-              href="mailto:hello@vidian.com"
+              href="mailto:hr@vidian.com"
               className="flex items-center gap-3 text-muted-foreground hover:text-foreground"
             >
               <span className="grid size-9 place-items-center rounded-lg bg-primary/12 text-primary ring-1 ring-primary/25">
                 <Mail className="size-4" />
               </span>
-              hello@vidian.com
+              hr@vidian.com
             </a>
             <div className="flex items-center gap-3 text-muted-foreground">
               <span className="grid size-9 place-items-center rounded-lg bg-primary/12 text-primary ring-1 ring-primary/25">
                 <Phone className="size-4" />
               </span>
-              +91 00000 00000
+              +91 90529 63152
             </div>
             <div className="flex items-center gap-3 text-muted-foreground">
               <span className="grid size-9 place-items-center rounded-lg bg-primary/12 text-primary ring-1 ring-primary/25">

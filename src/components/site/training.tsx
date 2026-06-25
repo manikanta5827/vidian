@@ -1,6 +1,6 @@
 import { Check, BookOpen, Users, Wrench, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { FadeIn, StaggerContainer, StaggerItem } from "./fade-in";
+import { FadeIn, StaggerContainer, StaggerItem, HorizontalStaggerItem } from "./fade-in";
 
 const tracks = [
   { code: "TRK-01", name: "RTL Design with Verilog/SystemVerilog", weeks: "10 wks" },
@@ -74,7 +74,7 @@ export function Training() {
             </div>
           </StaggerItem>
           {tracks.map((t) => (
-            <StaggerItem
+            <HorizontalStaggerItem
               key={t.code}
               className="group flex items-center gap-4 rounded-2xl border border-green-800/50 bg-green-900/40 p-5 shadow-xl shadow-black/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-400/20 hover:border-green-400/40"
             >
@@ -87,7 +87,7 @@ export function Training() {
                   {t.weeks}
                 </div>
               </div>
-            </StaggerItem>
+            </HorizontalStaggerItem>
           ))}
         </StaggerContainer>
       </div>

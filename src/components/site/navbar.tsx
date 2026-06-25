@@ -40,15 +40,11 @@ export function Navbar() {
       className="fixed left-1/2 top-4 z-50 w-[95%] max-w-4xl -translate-x-1/2 rounded-full border border-border bg-background shadow-2xl shadow-primary/10"
     >
       <nav className="mx-auto flex h-16 items-center justify-between px-5 lg:px-8">
-        <a href="#top" className="flex items-center gap-2">
-          <img 
-            src="/img/vidian_logo_green.jpg" 
-            alt="Vidian Logo" 
-            className="size-8 object-contain mix-blend-multiply" 
-          />
-          <span className="font-display text-lg font-bold tracking-tight">
-            Vidian
-          </span>
+        <a href="#top" className="flex items-center gap-1.5">
+          <div className="grid size-8 place-items-center rounded-lg bg-green-950 text-white shadow-sm">
+            <span className="font-display font-bold text-lg leading-none">V</span>
+          </div>
+          <span className="font-display text-xl font-bold tracking-tight text-green-950">Vidian</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

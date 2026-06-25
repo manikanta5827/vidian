@@ -1,6 +1,6 @@
 import { ShieldCheck, Gauge, Layers, Network } from "lucide-react";
 import { SectionHeading } from "./section-heading";
-import { FadeIn, StaggerContainer, StaggerItem } from "./fade-in";
+import { FadeIn, StaggerContainer, StaggerItem, HorizontalStaggerItem } from "./fade-in";
 import { ImageStack } from "./image-stack";
 
 const reasons = [
@@ -40,7 +40,7 @@ export function Why() {
           </FadeIn>
           <StaggerContainer className="mt-14 grid gap-6 sm:grid-cols-2">
             {reasons.map((r) => (
-              <StaggerItem
+              <HorizontalStaggerItem
                 key={r.title}
                 className="rounded-2xl border border-border bg-card/50 p-6 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 shadow-xl shadow-primary/5 hover:shadow-2xl hover:shadow-primary/15"
               >
@@ -53,12 +53,12 @@ export function Why() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {r.desc}
                 </p>
-              </StaggerItem>
+              </HorizontalStaggerItem>
             ))}
           </StaggerContainer>
         </div>
         
-        <FadeIn delay={0.2} className="relative z-10 w-full lg:pl-10">
+        <FadeIn delay={0.2} className="relative z-10 w-full lg:pl-10 lg:mt-24">
           <div className="relative">
             <ImageStack />
           </div>

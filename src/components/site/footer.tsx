@@ -21,13 +21,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <a href="#top" className="flex items-center gap-2">
-              <img 
-                src="/img/vidian_logo_green.jpg" 
-                alt="Vidian Logo" 
-                className="size-8 object-contain mix-blend-multiply" 
-              />
-              <span className="font-display text-lg font-bold">Vidian</span>
+            <a href="#top" className="flex items-center gap-1.5">
+              <div className="grid size-8 place-items-center rounded-lg bg-green-950 text-white shadow-sm">
+                <span className="font-display font-bold text-lg leading-none">V</span>
+              </div>
+              <span className="font-display text-xl font-bold tracking-tight text-green-950">Vidian</span>
             </a>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Silicon-to-system engineering — VLSI services, training, and
