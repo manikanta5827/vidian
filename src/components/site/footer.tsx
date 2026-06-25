@@ -3,15 +3,32 @@ import { Cpu, Globe, X, Mail } from "lucide-react";
 const cols = [
   {
     title: "Services",
-    links: ["VLSI Design", "Verification", "DFT", "Physical Design", "Software"],
+    links: [
+      { label: "VLSI Design", href: "#services" },
+      { label: "Verification", href: "#services" },
+      { label: "DFT", href: "#services" },
+      { label: "Physical Design", href: "#services" },
+      { label: "Software", href: "#services" },
+    ],
   },
   {
     title: "Academy",
-    links: ["RTL Track", "Verification Track", "DFT Track", "PD Track", "Placements"],
+    links: [
+      { label: "RTL Track", href: "#training" },
+      { label: "Verification Track", href: "#training" },
+      { label: "DFT Track", href: "#training" },
+      { label: "PD Track", href: "#training" },
+      { label: "Placements", href: "#contact" },
+    ],
   },
   {
     title: "Company",
-    links: ["About", "Careers", "Insights", "Contact"],
+    links: [
+      { label: "Why Vidian", href: "#why" },
+      { label: "Capabilities", href: "#stack" },
+      { label: "Process", href: "#process" },
+      { label: "FAQ", href: "#faq" },
+    ],
   },
 ];
 
@@ -54,12 +71,12 @@ export function Footer() {
               <h4 className="font-display text-sm font-semibold">{c.title}</h4>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map((l) => (
-                  <li key={l}>
+                  <li key={l.label}>
                     <a
-                      href="#"
+                      href={l.href}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      {l}
+                      {l.label}
                     </a>
                   </li>
                 ))}

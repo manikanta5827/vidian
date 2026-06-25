@@ -34,7 +34,7 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section className="border-t border-border/60 bg-card/40">
+    <section id="faq" className="border-t border-border/60 bg-card/40">
       <div className="mx-auto max-w-3xl px-5 py-24 lg:px-8">
         <FadeIn>
           <SectionHeading eyebrow="FAQ" title="Questions," accent="answered." />

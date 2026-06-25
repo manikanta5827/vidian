@@ -21,7 +21,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section className="bg-green-950 text-white pb-12">
+    <section id="process" className="bg-green-950 text-white pb-12">
       <div className="mx-auto max-w-7xl px-5 pt-24 pb-12 lg:px-8">
         <FadeIn>
           <div className="flex flex-col">
