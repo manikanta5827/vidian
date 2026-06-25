@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SectionHeading } from "./section-heading";
+import { FadeIn, StaggerContainer, StaggerItem } from "./fade-in";
 
 const faqs = [
   {
@@ -35,18 +36,27 @@ export function Faq() {
   return (
     <section className="border-t border-border/60 bg-card/40">
       <div className="mx-auto max-w-3xl px-5 py-24 lg:px-8">
-        <SectionHeading eyebrow="FAQ" title="Questions," accent="answered." />
+        <FadeIn>
+          <SectionHeading eyebrow="FAQ" title="Questions," accent="answered." />
+        </FadeIn>
         <Accordion className="mt-12">
-          {faqs.map((f, i) => (
-            <AccordionItem key={i} value={`item-${i}`}>
-              <AccordionTrigger className="py-5 text-base font-medium">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
+          <StaggerContainer>
+            {faqs.map((f, i) => (
+              <StaggerItem key={i}>
+                <AccordionItem 
+                  value={`item-${i}`}
+                  className="mb-4 rounded-xl border border-border bg-card/60 px-5 shadow-md shadow-primary/5 transition-all hover:shadow-lg hover:shadow-primary/10 data-[state=open]:shadow-xl data-[state=open]:shadow-primary/15"
+                >
+                  <AccordionTrigger className="py-5 text-base font-medium text-left">
+                    {f.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-5">
+                    {f.a}
+                  </AccordionContent>
+                </AccordionItem>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </Accordion>
       </div>
     </section>

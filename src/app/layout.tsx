@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono, Pacifico } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,6 +18,12 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const pacifico = Pacifico({
+  variable: "--font-cursive",
+  weight: ["400"],
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Vidian — VLSI Services, Training & Software",
   description:
@@ -32,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${pacifico.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         {children}

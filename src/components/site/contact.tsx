@@ -5,6 +5,7 @@ import { Mail, MapPin, Phone, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { FadeIn } from "./fade-in";
 
 const interests = ["VLSI Services", "VLSI Training", "Software", "Partnership"];
 
@@ -29,7 +30,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-      <div className="grid gap-10 rounded-3xl border border-border bg-card/50 p-8 lg:grid-cols-2 lg:p-12">
+      <FadeIn className="grid gap-10 rounded-3xl border border-border bg-card/50 p-8 lg:grid-cols-2 lg:p-12 shadow-2xl shadow-primary/5">
         {/* left: pitch + contacts */}
         <div>
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
@@ -69,7 +70,7 @@ export function Contact() {
         </div>
 
         {/* right: form */}
-        <div className="rounded-2xl border border-border bg-background/50 p-6 lg:p-8">
+        <div className="rounded-2xl border border-border bg-background p-6 lg:p-8 shadow-xl shadow-primary/5 hover:shadow-2xl hover:shadow-primary/10 transition-shadow">
           {sent ? (
             <div className="flex h-full min-h-72 flex-col items-center justify-center text-center">
               <CheckCircle className="size-12 text-primary" />
@@ -92,6 +93,7 @@ export function Contact() {
                     name="name"
                     placeholder="Your name"
                     aria-invalid={error.includes("name") || undefined}
+                    className="shadow-sm hover:shadow-md transition-shadow focus-visible:shadow-md focus-visible:shadow-primary/20"
                   />
                 </div>
                 <div>
@@ -104,6 +106,7 @@ export function Contact() {
                     type="email"
                     placeholder="you@company.com"
                     aria-invalid={error.includes("email") || undefined}
+                    className="shadow-sm hover:shadow-md transition-shadow focus-visible:shadow-md focus-visible:shadow-primary/20"
                   />
                 </div>
               </div>
@@ -121,8 +124,8 @@ export function Contact() {
                       onClick={() => setInterest(opt)}
                       className={`rounded-full border px-3 py-1.5 font-mono text-xs transition-colors ${
                         interest === opt
-                          ? "border-primary/40 bg-primary/15 text-primary"
-                          : "border-border text-muted-foreground hover:text-foreground"
+                          ? "border-primary/40 bg-primary/15 text-primary shadow-md shadow-primary/10"
+                          : "border-border text-muted-foreground hover:text-foreground hover:shadow-sm"
                       }`}
                     >
                       {opt}
@@ -140,6 +143,7 @@ export function Contact() {
                   name="message"
                   rows={4}
                   placeholder="A few lines about your project or goals…"
+                  className="shadow-sm hover:shadow-md transition-shadow focus-visible:shadow-md focus-visible:shadow-primary/20"
                 />
               </div>
 
@@ -151,13 +155,13 @@ export function Contact() {
                 {error}
               </p>
 
-              <Button type="submit" className="h-11 w-full gap-2 font-semibold">
+              <Button type="submit" className="h-11 w-full gap-2 font-semibold shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30">
                 Send message <ArrowRight className="size-4" />
               </Button>
             </form>
           )}
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

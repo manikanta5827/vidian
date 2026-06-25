@@ -22,9 +22,11 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <a href="#top" className="flex items-center gap-2">
-              <span className="grid size-8 place-items-center rounded-lg bg-primary/15 text-primary ring-1 ring-primary/30">
-                <Cpu className="size-4" />
-              </span>
+              <img 
+                src="/img/vidian_logo_green.jpg" 
+                alt="Vidian Logo" 
+                className="size-8 object-contain mix-blend-multiply" 
+              />
               <span className="font-display text-lg font-bold">Vidian</span>
             </a>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
@@ -41,7 +43,7 @@ export function Footer() {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="grid size-9 place-items-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                  className="grid size-9 place-items-center rounded-lg border border-border text-muted-foreground transition-all hover:border-primary/40 hover:text-primary shadow-sm hover:shadow-md hover:-translate-y-0.5"
                 >
                   <Icon className="size-4" />
                 </a>

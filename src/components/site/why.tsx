@@ -1,5 +1,7 @@
 import { ShieldCheck, Gauge, Layers, Network } from "lucide-react";
 import { SectionHeading } from "./section-heading";
+import { FadeIn, StaggerContainer, StaggerItem } from "./fade-in";
+import { ImageStack } from "./image-stack";
 
 const reasons = [
   {
@@ -26,29 +28,41 @@ const reasons = [
 
 export function Why() {
   return (
-    <section id="why" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-      <SectionHeading
-        eyebrow="Why Vidian"
-        title="An engineering partner that"
-        accent="closes the loop."
-      />
-      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {reasons.map((r) => (
-          <div
-            key={r.title}
-            className="rounded-2xl border border-border bg-card/50 p-6 transition-colors hover:border-primary/40"
-          >
-            <span className="grid size-11 place-items-center rounded-xl bg-primary/12 text-primary ring-1 ring-primary/25">
-              <r.icon className="size-5" />
-            </span>
-            <h3 className="mt-5 font-display text-lg font-semibold">
-              {r.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {r.desc}
-            </p>
+    <section id="why" className="mx-auto max-w-7xl px-5 py-24 lg:px-8 overflow-hidden">
+      <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+        <div>
+          <FadeIn>
+            <SectionHeading
+              eyebrow="Why Vidian"
+              title="An engineering partner that"
+              accent="closes the loop."
+            />
+          </FadeIn>
+          <StaggerContainer className="mt-14 grid gap-6 sm:grid-cols-2">
+            {reasons.map((r) => (
+              <StaggerItem
+                key={r.title}
+                className="rounded-2xl border border-border bg-card/50 p-6 transition-all duration-300 hover:border-primary/40 hover:-translate-y-2 shadow-xl shadow-primary/5 hover:shadow-2xl hover:shadow-primary/15"
+              >
+                <span className="grid size-11 place-items-center rounded-xl bg-primary/12 text-primary ring-1 ring-primary/25">
+                  <r.icon className="size-5" />
+                </span>
+                <h3 className="mt-5 font-display text-lg font-semibold">
+                  {r.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {r.desc}
+                </p>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+        
+        <FadeIn delay={0.2} className="relative z-10 w-full lg:pl-10">
+          <div className="relative">
+            <ImageStack />
           </div>
-        ))}
+        </FadeIn>
       </div>
     </section>
   );
