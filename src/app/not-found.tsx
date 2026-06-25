@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { ArrowLeft, Cpu } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
@@ -29,12 +29,13 @@ export default function NotFound() {
           </p>
           
           <div className="mt-10 flex justify-center gap-4">
-            <Button asChild className="h-12 px-8 gap-2 font-semibold shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30">
-              <Link href="/">
-                <ArrowLeft className="size-4" />
-                Back to Home
-              </Link>
-            </Button>
+            <Link 
+              href="/"
+              className={buttonVariants({ className: "h-12 px-8 gap-2 font-semibold shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30" })}
+            >
+              <ArrowLeft className="size-4" />
+              Back to Home
+            </Link>
           </div>
         </div>
       </main>
