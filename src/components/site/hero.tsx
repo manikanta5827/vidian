@@ -19,19 +19,18 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden">
       {/* backdrop */}
       <div className="pointer-events-none absolute inset-0 bg-circuit" />
-      <div className="pointer-events-none absolute -top-40 left-1/2 size-[640px] -translate-x-1/2 glow-green opacity-40" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pt-20 pb-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pt-28 lg:pb-24">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-xs text-primary">
-            <span className="size-1.5 animate-pulse rounded-full bg-primary" />
+            <span className="size-1.5 rounded-full bg-primary" />
             silicon-to-system engineering
           </span>
 
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
             Tape-out{" "}
-            <span className="text-primary text-glow">ready.</span>{" "}
+            <span className="text-primary">ready.</span>{" "}
             <br />
             From RTL to reality.
           </h1>
@@ -49,7 +48,7 @@ export function Hero() {
             <Button
               nativeButton={false}
               render={<a href="#contact" />}
-              className="h-12 gap-2 px-6 text-base font-semibold ring-glow"
+              className="h-12 gap-2 px-6 text-base font-semibold shadow-sm"
             >
               Get Started <ArrowRight className="size-4" />
             </Button>
@@ -75,8 +74,7 @@ export function Hero() {
 
         {/* hero visual — real silicon photo + floating live-status chip */}
         <div className="relative">
-          <div className="absolute -inset-6 glow-green opacity-60" />
-          <div className="relative overflow-hidden rounded-2xl border border-border ring-glow">
+          <div className="relative overflow-hidden rounded-2xl border border-border shadow-sm">
             <img
               src="/img/chip.jpg"
               alt="Macro photograph of a microprocessor die mounted on a circuit board"

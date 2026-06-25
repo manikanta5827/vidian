@@ -58,7 +58,7 @@ export function Training() {
         </div>
 
         <div className="space-y-4">
-          <div className="overflow-hidden rounded-2xl border border-border ring-glow">
+          <div className="overflow-hidden rounded-2xl border border-border shadow-sm">
             <img
               src="/img/circuit.jpg"
               alt="Macro view of a circuit board, representing hands-on hardware training"

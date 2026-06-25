@@ -107,23 +107,6 @@
     opacity: 0.05;
     mix-blend-mode: multiply;
   }
-  /* Soft radial green wash (subtle on white) */
-  .glow-green {
-    background: radial-gradient(
-      closest-side,
-      color-mix(in oklch, var(--primary) 8%, transparent),
-      transparent
-    );
-  }
-  /* ponytail: no text-shadow on light theme — neon glow reads as blur on white */
-  .text-glow {
-    text-shadow: none;
-  }
-  .ring-glow {
-    box-shadow:
-      0 1px 0 0 color-mix(in oklch, var(--primary) 6%, transparent),
-      0 18px 40px -24px color-mix(in oklch, var(--primary) 20%, transparent);
-  }
   /* Infinite marquee for keyword ticker */
   .animate-marquee {
     animation: marquee 32s linear infinite;

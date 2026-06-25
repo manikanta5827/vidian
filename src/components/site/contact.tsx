@@ -29,7 +29,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-      <div className="grid gap-10 rounded-3xl border border-border bg-card/50 p-8 ring-glow lg:grid-cols-2 lg:p-12">
+      <div className="grid gap-10 rounded-3xl border border-border bg-card/50 p-8 lg:grid-cols-2 lg:p-12">
         {/* left: pitch + contacts */}
         <div>
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
