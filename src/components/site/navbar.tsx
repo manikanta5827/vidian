@@ -40,7 +40,7 @@ export function Navbar() {
       className="fixed left-1/2 top-4 z-50 w-[95%] max-w-4xl -translate-x-1/2 rounded-full border border-border bg-background shadow-2xl shadow-primary/10"
     >
       <nav className="mx-auto flex h-16 items-center justify-between px-5 lg:px-8">
-        <a href="#top" className="flex items-center gap-1.5">
+        <a href="/" className="flex items-center gap-1.5">
           <div className="grid size-8 place-items-center rounded-lg bg-green-950 text-white shadow-sm">
             <span className="font-display font-bold text-lg leading-none">V</span>
           </div>
@@ -62,7 +62,7 @@ export function Navbar() {
         <div className="hidden md:block">
           <Button
             nativeButton={false}
-            render={<a href="#contact" />}
+            render={<a href="/#contact" />}
             className="h-9 rounded-full px-5 text-sm shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/30"
           >
             Let&apos;s Talk

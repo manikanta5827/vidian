@@ -13,19 +13,42 @@ export function Contact() {
   const [interest, setInterest] = useState(interests[0]);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  // ponytail: no backend wired — validates then shows confirmation only.
-  // Add a POST to a form endpoint (Resend/Formspree/route handler) when live.
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (isLoading) return;
+
     const data = new FormData(e.currentTarget);
     const email = String(data.get("email") ?? "").trim();
     const name = String(data.get("name") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
     if (!name) return setError("Please tell us your name.");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       return setError("Please enter a valid email address.");
+    
     setError("");
-    setSent(true);
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, interest, message }),
+      });
+
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.error || "Failed to send message.");
+      }
+      
+      setSent(true);
+    } catch (err: any) {
+      setError(err.message || "An error occurred. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -46,13 +69,13 @@ export function Contact() {
 
           <div className="mt-8 space-y-4 text-sm">
             <a
-              href="mailto:hr@vidian.com"
+              href="mailto:hr@vidian.in"
               className="flex items-center gap-3 text-muted-foreground hover:text-foreground"
             >
               <span className="grid size-9 place-items-center rounded-lg bg-primary/12 text-primary ring-1 ring-primary/25">
                 <Mail className="size-4" />
               </span>
-              hr@vidian.com
+              hr@vidian.in
             </a>
             <div className="flex items-center gap-3 text-muted-foreground">
               <span className="grid size-9 place-items-center rounded-lg bg-primary/12 text-primary ring-1 ring-primary/25">
@@ -155,8 +178,14 @@ export function Contact() {
                 {error}
               </p>
 
-              <Button type="submit" className="h-11 w-full gap-2 font-semibold shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30">
-                Send message <ArrowRight className="size-4" />
+              <Button 
+                type="submit" 
+                disabled={isLoading}
+                className="h-11 w-full gap-2 font-semibold shadow-lg shadow-primary/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30"
+              >
+                {isLoading ? "Sending..." : (
+                  <>Send message <ArrowRight className="size-4" /></>
+                )}
               </Button>
             </form>
           )}
